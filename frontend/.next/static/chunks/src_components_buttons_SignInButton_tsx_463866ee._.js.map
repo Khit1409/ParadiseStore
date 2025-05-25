@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///D:/all-projects/ParadiseStore/frontend/src/components/buttons/SignInButton.tsx"],"sourcesContent":["'use client'\n\nimport React from \"react\";\n\ninterface ButtonProps {\n  placeholder: string;\n  type: string;\n  name: string;\n  onChange: React.ChangeEventHandler<HTMLInputElement>;\n}\n\nexport default function SignInButton({\n  placeholder,\n  type,\n  name,\n  onChange,\n}: ButtonProps) {\n  return (\n    <input\n      type={type}\n      name={name}\n      onChange={onChange}\n      className=\"border-[1.5px] border-gray-500 outline-0 rounded w-full text-center\"\n      placeholder={placeholder}\n    />\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;AAWe,SAAS,aAAa,EACnC,WAAW,EACX,IAAI,EACJ,IAAI,EACJ,QAAQ,EACI;IACZ,qBACE,6LAAC;QACC,MAAM;QACN,MAAM;QACN,UAAU;QACV,WAAU;QACV,aAAa;;;;;;AAGnB;KAfwB","debugId":null}}]
+}

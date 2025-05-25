@@ -1,13 +1,8 @@
-import { IsEmail, MaxLength, MinLength } from 'class-validator';
+import { IsString, MinLength } from 'class-validator';
 
 export class LoginDto {
-  /* eslint-disable @typescript-eslint/no-unsafe-call */
-  @IsEmail()
-  email: string;
-
-  @MaxLength(10)
-  @MinLength(10)
-  phone: string;
+  @IsString()
+  signInput: string;
 
   @MinLength(6)
   password: string;
