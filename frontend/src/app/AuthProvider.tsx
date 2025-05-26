@@ -34,5 +34,5 @@ export default function AuthProvider({ children }: Props) {
     return <p>Loading....</p>;
   }
   //return component if isloggedIn true
-  if (loading == false && isLoggedIn == true) return <div>{children}</div>;
+  return <div>{children}</div>;
 }

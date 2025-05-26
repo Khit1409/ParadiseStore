@@ -5,6 +5,7 @@ import SignInButton from "../buttons/SignInButton";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/globalStore";
 import { fetchLogin } from "@/redux/authSlice";
+import SuccessModel from "../model/SuccessModel";
 
 interface RequestType {
   signInput: string;
@@ -13,6 +14,7 @@ interface RequestType {
 
 export default function SignInForm() {
   const dispatch = useDispatch<AppDispatch>();
+  const [model, setModel] = useState(false);
   const [request, setRequest] = useState<RequestType>({
     signInput: "",
     password: "",
@@ -35,12 +37,11 @@ export default function SignInForm() {
       );
       if (fetchLogin.fulfilled.match(login)) {
         if (login.payload.resultCode == 1) {
-          alert("thành công");
+          setModel(true);
         }
       }
     } catch (error) {
       if (fetchLogin.rejected.match(error)) {
-        alert("Thất bại!");
         console.log(error);
       }
     }
@@ -48,6 +49,7 @@ export default function SignInForm() {
 
   return (
     <div className="flex items-center justify-center">
+      {model && <SuccessModel setModel={setModel} />}
       <form className="flex flex-col gap-2" onSubmit={handleLogin}>
         <div className="">
           <label htmlFor="signInput">Email or phone</label>

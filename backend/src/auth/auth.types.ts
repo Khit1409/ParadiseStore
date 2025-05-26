@@ -11,7 +11,7 @@ export interface DecodedPayload {
 }
 //kiểu trả về check auth
 export interface CheckAuthResult {
-  decoded: DecodedPayload;
+  users: DecodedPayload;
   resultCode: number;
 }
 //ép kiểu token

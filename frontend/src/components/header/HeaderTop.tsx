@@ -1,7 +1,9 @@
 "use client";
 
 import { leftMenu, rightMenu } from "@/utils/globalList";
+import { faBell, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React from "react";
 
 export default function HeaderTop() {
@@ -30,6 +32,17 @@ export default function HeaderTop() {
               </a>
             </li>
           ))}
+          <span>|</span>
+          <li>
+            <button>
+              <FontAwesomeIcon icon={faBell} />
+            </button>
+          </li>
+          <li>
+            <Link href={"/register"}>
+              <FontAwesomeIcon icon={faUserPlus} />
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

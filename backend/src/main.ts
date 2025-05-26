@@ -7,7 +7,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   //cors
   app.enableCors({
-    origin: 'http://localhost:3000', // cho phép frontend truy cập
+    // cho phép frontend truy cập
+    origin: ['http://192.168.137.1:3000', 'http://localhost:3000'],
+
     credentials: true, // nếu bạn dùng cookie
   });
   app.useGlobalPipes(

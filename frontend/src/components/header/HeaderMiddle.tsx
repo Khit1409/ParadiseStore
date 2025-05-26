@@ -49,7 +49,7 @@ export default function HeaderMiddle() {
         <form className="relative w-1/2">
           <input
             type="text"
-            className="text-center border-[1.5px] border-gray-400 rounded w-full outline-0 text-gray-600"
+            className="text-center border-[1.5px] border-gray-400 rounded w-full outline-0 text-gray-600 py-1"
             placeholder="Search something"
           />
           <button className="absolute right-0 rounded-r bg-black text-white px-2 h-full ">
@@ -64,7 +64,7 @@ export default function HeaderMiddle() {
           >
             <FontAwesomeIcon icon={faBars} />
           </button>
-          {isLoggedIn != null || isLoggedIn == true ? (
+          {isLoggedIn == true ? (
             <button
               onClick={handleLogout}
               className=" border-[1.5px] px-2 font-semibold"

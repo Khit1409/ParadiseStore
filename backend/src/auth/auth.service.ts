@@ -111,7 +111,7 @@ export class AuthService {
       ) as DecodedPayload;
 
       return Promise.resolve({
-        decoded: tokenVerify,
+        users: tokenVerify,
         resultCode: 1,
       });
     } catch (error) {

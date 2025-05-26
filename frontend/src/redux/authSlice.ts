@@ -1,35 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-
-//đăng nhập trả về
-interface LoginResponse {
-  resultCode: number;
-  message: string;
-}
-
-// các trường users
-interface UserType {
-  sub: string;
-  email: string;
-  gender: string;
-  address: string;
-  role: string;
-  phone: string;
-}
-
-//các type dùng trong reducers
-interface AuthType {
-  isLoggedIn: boolean | null;
-  loading: boolean;
-  users: UserType | null;
-  error: string | null;
-}
-const initialState: AuthType = {
-  isLoggedIn: null,
-  users: null,
-  loading: false,
-  error: null,
-};
+import { LoginResponse, UserType, initialState } from "./globalState/authState";
 
 //login
 export const fetchLogin = createAsyncThunk<
@@ -84,7 +55,11 @@ export const fetchLogout = createAsyncThunk<
   { rejectValue: string }
 >("auth/logout", async (_, thunkAPI) => {
   try {
-    const res = await axios.post("http://localhost:8080/api/auth/logout");
+    const res = await axios.post(
+      "http://localhost:8080/api/auth/logout",
+      {},
+      { withCredentials: true }
+    );
     if (res.data.resultCode == 1) {
       return res.data.message;
     }

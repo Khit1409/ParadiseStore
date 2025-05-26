@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 export default function Header() {
   return (
-    <div>
+    <div className="px-2">
       <HeaderTop />
       <HeaderMiddle />
       <Navbar />
